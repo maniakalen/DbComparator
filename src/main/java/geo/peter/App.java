@@ -1,6 +1,7 @@
 package geo.peter;
 
 import geo.peter.ui.DbConnectFrame;
+import geo.peter.ui.GuiHelper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,12 +16,7 @@ public class App {
     {
         this.frame = new JFrame("DB Comparator");
         this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.frame.setLocation(dim.width/2-this.frame.getSize().width/2, dim.height/2-this.frame.getSize().height/2);
-
-        this.frame.getContentPane().add(new DbConnectFrame(this.frame));
-
+        GuiHelper.replaceFrame(this.frame, new DbConnectFrame(this.frame));
 
         this.frame.pack();
         this.frame.setVisible(true);
