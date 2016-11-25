@@ -29,6 +29,7 @@ public class DbTableListBlock extends JPanel {
         this.model = new TableListDataModel();
 
         final JTable table = new JTable(this.model);
+        table.setDefaultRenderer(String.class, new TableListDataModel.MyTableCellRenderer());
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         table.setFillsViewportHeight(true);
         this.scroll = new JScrollPane(table);
